@@ -1,6 +1,7 @@
 import { resume } from './documents';
 import {
   address,
+  contactInfo,
   dateRange,
   education,
   experience,
@@ -17,6 +18,7 @@ const Objects = [
   experience,
   location,
   monthYear,
+  contactInfo,
 ];
 
 export const schemaTypes = [...Documents, ...Objects];

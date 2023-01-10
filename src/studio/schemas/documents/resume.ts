@@ -33,6 +33,12 @@ const Resume = defineType({
       group: 'details',
     },
     {
+      title: 'Contact Info',
+      name: 'contactInfo',
+      type: 'contactInfo',
+      group: 'details',
+    },
+    {
       title: 'Education',
       name: 'education',
       type: 'array',
