@@ -3,6 +3,7 @@ import { defineType } from 'sanity';
 type ParentType = { parent?: { present: boolean } };
 
 const DateRange = defineType({
+  title: 'Dates',
   name: 'dateRange',
   type: 'object',
   fields: [
