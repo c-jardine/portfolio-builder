@@ -5,6 +5,7 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "@sanity/eslint-config-studio",
+
     "prettier"
   ],
   "root": true,
@@ -12,9 +13,10 @@
   "parserOptions": {
     "project": ["tsconfig.json"]
   },
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "use-encapsulation"],
   "rules": {
     "@typescript-eslint/no-unused-vars": "error",
-    "@typescript-eslint/no-explicit-any": "error"
+    "@typescript-eslint/no-explicit-any": "error",
+    "use-encapsulation/prefer-custom-hooks": ["error"]
   }
 }
