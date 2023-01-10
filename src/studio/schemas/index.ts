@@ -8,12 +8,15 @@ import {
   monthYear,
 } from './objects';
 
-export const schemaTypes = [
+const Documents = [resume];
+
+const Objects = [
   address,
-  resume,
   dateRange,
   education,
-  monthYear,
-  location,
   experience,
+  location,
+  monthYear,
 ];
+
+export const schemaTypes = [...Documents, ...Objects];

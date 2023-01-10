@@ -1,5 +1,5 @@
 import { defineType } from 'sanity';
-import { months } from '../lists';
+import { months } from '../../lists';
 
 const MonthYear = defineType({
   title: 'Date',

@@ -1,5 +1,5 @@
 import { defineType } from 'sanity';
-import { states } from '../lists';
+import { states } from '../../lists';
 
 type ParentType = { parent?: { customLocation: boolean } };
 
