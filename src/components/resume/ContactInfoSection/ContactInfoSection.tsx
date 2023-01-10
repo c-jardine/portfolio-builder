@@ -11,7 +11,7 @@ type ContactTypes = keyof ContactInfoType;
  */
 const ContactInfoSection = (props: ContactInfoSectionProps) => {
   return (
-    <Stack direction={{ base: 'column', lg: 'row' }} gap={4}>
+    <Stack id="contact-info" direction={{ base: 'column', lg: 'row' }} gap={4}>
       {Object.keys(props).map(
         (item: ContactTypes) =>
           item !== '_type' && (
