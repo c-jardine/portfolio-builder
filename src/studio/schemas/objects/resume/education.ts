@@ -42,6 +42,7 @@ const Education = defineType({
       name: 'degreeType',
       type: 'string',
       fieldset: 'degree',
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Major',
