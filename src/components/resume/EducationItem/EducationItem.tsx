@@ -1,9 +1,12 @@
 import { Heading, Stack, Text } from '@chakra-ui/react';
 import { EducationType } from '../../../studio/types';
+import { formatDateRange } from '../../../utils';
 
 type EducationItemProps = EducationType;
 
 const EducationItem = (props: EducationItemProps) => {
+  const date = formatDateRange(props.attended);
+
   return (
     <Stack>
       <Heading as="h3" fontSize="lg">
@@ -16,12 +19,7 @@ const EducationItem = (props: EducationItemProps) => {
         <Text>
           {props.degreeType}, {props.major}
         </Text>
-        <Text>
-          {props.attended.from.month} {props.attended.from.year} -{' '}
-          {props.attended.present
-            ? 'present'
-            : `${props.attended.to.month} ${props.attended.to.year}`}
-        </Text>
+        <Text>{date}</Text>
       </Stack>
     </Stack>
   );
