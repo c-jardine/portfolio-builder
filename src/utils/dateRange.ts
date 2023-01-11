@@ -1,5 +1,4 @@
 import { DateRangeType, MonthYearType } from '../studio/types';
-import monthMapper from './monthMapper';
 
 /**
  * Formats the MonthYear schema type.
@@ -9,7 +8,7 @@ import monthMapper from './monthMapper';
  */
 const formatDate = (date: MonthYearType) => {
   const monthAndYear = (date.month && date.year) ?? null;
-  if (monthAndYear) return `${monthMapper(date.month)} ${date.year}`;
+  if (monthAndYear) return `${date.month} ${date.year}`;
   const year = date.year ?? null;
   if (year) return year;
   return null;
@@ -23,7 +22,7 @@ const formatDate = (date: MonthYearType) => {
 export const formatDateRange = (date: DateRangeType) => {
   const fromDate = formatDate(date.from);
   const toDate = date.present ? 'present' : formatDate(date.to);
-  const from = fromDate ? `${fromDate} - ` : '';
+  const from = fromDate ? `${fromDate} -` : '';
   const to = toDate ? toDate : '';
   return `${from} ${to}`;
 };
