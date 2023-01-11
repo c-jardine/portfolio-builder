@@ -50,7 +50,7 @@ const ContactInfoItem = (props: ContactInfoProps) => {
     }
   };
   return (
-    <Link href={getLink()}>
+    <Link href={getLink()} w="full">
       <Stack
         divider={<StackDivider />}
         alignItems="center"

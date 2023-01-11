@@ -1,5 +1,9 @@
 import { Container, Heading, Stack } from '@chakra-ui/react';
-import { ContactInfoSection, EducationSection } from '../../components';
+import {
+  ContactInfoSection,
+  EducationSection,
+  SkillsSection,
+} from '../../components';
 import { ExperienceSection } from '../../components/resume/ExperienceSection';
 import { ResumeType } from '../../studio/types';
 
@@ -15,6 +19,7 @@ const ResumeLayout = (props: ResumeLayoutProps) => {
         </Stack>
         <EducationSection data={props.education} />
         <ExperienceSection data={props.experience} />
+        <SkillsSection data={props.skills} />
       </Stack>
     </Container>
   );
