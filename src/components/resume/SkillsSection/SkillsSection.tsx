@@ -5,6 +5,9 @@ import { SkillsItem } from '../SkillsItem';
 
 type SkillsSectionProps = { data: SkillsSectionType[] };
 
+/**
+ * Main skills section.
+ */
 const SkillsSection = (props: SkillsSectionProps) => {
   return (
     <Stack>
