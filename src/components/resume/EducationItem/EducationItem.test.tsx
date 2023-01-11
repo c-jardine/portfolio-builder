@@ -9,6 +9,11 @@ const defaultProps: EducationType = {
   institution: 'Testing University',
   degreeType: 'BS',
   major: 'Computer Science',
+  location: {
+    _type: 'location',
+    customLocation: true,
+    location: 'Mumbai, India',
+  },
   attended: {
     _type: 'dateRange',
     present: false,
