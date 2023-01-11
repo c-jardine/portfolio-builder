@@ -23,7 +23,7 @@ const formatDate = (date: MonthYearType) => {
 export const formatDateRange = (date: DateRangeType) => {
   const fromDate = formatDate(date.from);
   const toDate = date.present ? 'present' : formatDate(date.to);
-  const from = fromDate ? `${fromDate} - ` : '';
+  const from = fromDate ? `${fromDate} -` : '';
   const to = toDate ? toDate : '';
   return `${from} ${to}`;
 };

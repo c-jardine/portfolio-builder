@@ -10,7 +10,7 @@ type BulletPointSectionProps = {
  */
 const BulletPointSection = (props: BulletPointSectionProps) => {
   return (
-    <Stack pl={4}>
+    <Stack role="list" pl={4}>
       {props.data.map((item) => (
         <BulletPointItem key={item} data={item} />
       ))}

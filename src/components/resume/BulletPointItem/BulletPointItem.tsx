@@ -7,7 +7,7 @@ type BulletPointProps = { data: string };
  */
 const BulletPointItem = (props: BulletPointProps) => {
   return (
-    <SimpleGrid templateColumns="auto 100%" gap={2}>
+    <SimpleGrid role="listitem" templateColumns="auto 100%" gap={2}>
       <Text>&bull;</Text>
       <Text>{props.data}</Text>
     </SimpleGrid>

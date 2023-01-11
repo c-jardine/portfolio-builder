@@ -6,7 +6,6 @@ import { ResumeType } from '../../studio/types';
 type ResumeLayoutProps = ResumeType;
 
 const ResumeLayout = (props: ResumeLayoutProps) => {
-  console.log(props.education);
   return (
     <Container maxW="3xl" w="full">
       <Stack spacing={8}>
