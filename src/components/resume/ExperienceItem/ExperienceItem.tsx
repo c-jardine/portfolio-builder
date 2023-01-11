@@ -1,6 +1,7 @@
 import { Heading, Stack, Text } from '@chakra-ui/react';
 import { ExperienceType } from '../../../studio/types';
 import { formatDateRange } from '../../../utils';
+import formatLocation from '../../../utils/location';
 import { BulletPointSection } from '../BulletPointSection';
 
 type ExperienceItemProps = ExperienceType;
@@ -10,12 +11,20 @@ type ExperienceItemProps = ExperienceType;
  */
 const ExperienceItem = (props: ExperienceItemProps) => {
   const date = formatDateRange(props.dates);
+  const location = formatLocation(props.location);
 
   return (
     <Stack>
-      <Heading as="h3" fontSize="lg">
-        {props.companyName}
-      </Heading>
+      <Stack
+        direction={{ base: 'column', md: 'row' }}
+        justifyContent={{ md: 'space-between' }}
+      >
+        <Heading as="h3" fontSize="lg">
+          {props.companyName}
+        </Heading>
+        {props.location && <Text>{location}</Text>}
+      </Stack>
+
       <Stack
         direction={{ base: 'column', md: 'row' }}
         justifyContent={{ md: 'space-between' }}
