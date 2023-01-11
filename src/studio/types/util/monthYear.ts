@@ -1,17 +1,17 @@
 export type MonthYearType = {
   _type: 'myDate';
   month?:
-    | 'jan'
-    | 'feb'
-    | 'mar'
-    | 'apr'
-    | 'may'
-    | 'jun'
-    | 'jul'
-    | 'aug'
-    | 'sep'
-    | 'oct'
-    | 'nov'
-    | 'dec';
+    | 'January'
+    | 'February'
+    | 'March'
+    | 'April'
+    | 'May'
+    | 'June'
+    | 'July'
+    | 'August'
+    | 'September'
+    | 'October'
+    | 'November'
+    | 'December';
   year?: string;
 };
