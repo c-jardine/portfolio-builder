@@ -4,6 +4,9 @@ import { formatDateRange } from '../../../utils';
 
 type EducationItemProps = EducationType;
 
+/**
+ * Main education item.
+ */
 const EducationItem = (props: EducationItemProps) => {
   const date = formatDateRange(props.attended);
 
@@ -16,11 +19,13 @@ const EducationItem = (props: EducationItemProps) => {
         direction={{ base: 'column', md: 'row' }}
         justifyContent={{ md: 'space-between' }}
       >
-        <Text>
+        <Text order={{ base: 2, md: 1 }}>
           {props.degreeType}, {props.major}
         </Text>
-        <Text>{date}</Text>
+        <Text order={{ base: 1, md: 2 }}>{date}</Text>
       </Stack>
+      {props.minor && <Text>Minor: {props.minor}</Text>}
+      {props.details && <Text>{props.details}</Text>}
     </Stack>
   );
 };

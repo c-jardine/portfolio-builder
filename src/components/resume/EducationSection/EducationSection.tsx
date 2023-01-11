@@ -5,6 +5,9 @@ import { SectionHeading } from '../SectionHeading';
 
 type EducationSectionProps = { data: [EducationType & { _key: string }] };
 
+/**
+ * Main education section.
+ */
 const EducationSection = (props: EducationSectionProps) => {
   return (
     <Stack>
