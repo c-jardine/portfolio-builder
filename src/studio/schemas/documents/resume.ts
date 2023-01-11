@@ -18,6 +18,10 @@ const Resume = defineType({
       title: 'Experience',
       name: 'experience',
     },
+    {
+      title: 'Skills',
+      name: 'skills',
+    },
   ],
   fields: [
     {
@@ -51,6 +55,12 @@ const Resume = defineType({
       type: 'array',
       of: [{ type: 'experience' }],
       group: 'experience',
+    },
+    {
+      title: 'Skills',
+      name: 'skills',
+      type: 'array',
+      of: [{ type: 'skillsSection' }],
     },
   ],
 });

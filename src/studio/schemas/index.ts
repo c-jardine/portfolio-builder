@@ -7,6 +7,7 @@ import {
   experience,
   location,
   monthYear,
+  skillsSection,
 } from './objects';
 
 const Documents = [resume];
@@ -19,6 +20,7 @@ const Objects = [
   location,
   monthYear,
   contactInfo,
+  skillsSection,
 ];
 
 export const schemaTypes = [...Documents, ...Objects];

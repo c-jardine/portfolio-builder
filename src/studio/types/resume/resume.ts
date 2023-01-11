@@ -2,6 +2,7 @@ import { AddressType } from './address';
 import { ContactInfoType } from './contactInfo';
 import { EducationType } from './education';
 import { ExperienceType } from './experience';
+import { SkillsSectionType } from './skillsSection';
 
 export type ResumeType = {
   _createdAt?: string;
@@ -11,7 +12,8 @@ export type ResumeType = {
   _updatedAt: string;
   address: AddressType;
   contactInfo?: ContactInfoType;
-  education: [EducationType & { _key: string }];
-  experience: [ExperienceType & { _key: string }];
+  education: EducationType[];
+  experience: ExperienceType[];
   name: string;
+  skills?: SkillsSectionType[];
 };
