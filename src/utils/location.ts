@@ -5,7 +5,7 @@ import { LocationType } from '../studio/types';
  * @param location The location object returned by Sanity.
  * @returns A formatted string representation of the location.
  */
-const formatLocation = (location: LocationType) => {
+export const formatLocation = (location: LocationType) => {
   const initLocation = location ?? null;
   if (!initLocation) return null;
   const customLocation = initLocation.customLocation
@@ -19,5 +19,3 @@ const formatLocation = (location: LocationType) => {
   if (cityState) return cityState;
   return null;
 };
-
-export default formatLocation;

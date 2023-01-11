@@ -1,7 +1,6 @@
 import { Heading, Stack, Text } from '@chakra-ui/react';
 import { EducationType } from '../../../studio/types';
-import { formatDateRange } from '../../../utils';
-import formatLocation from '../../../utils/location';
+import { formatDateRange, formatLocation } from '../../../utils';
 
 type EducationItemProps = EducationType;
 
@@ -13,7 +12,7 @@ const EducationItem = (props: EducationItemProps) => {
   const location = formatLocation(props.location);
 
   return (
-    <Stack>
+    <Stack id="education-item">
       <Stack
         direction={{ base: 'column', md: 'row' }}
         justifyContent={{ md: 'space-between' }}

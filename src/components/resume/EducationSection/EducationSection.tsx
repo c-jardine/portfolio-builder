@@ -3,7 +3,7 @@ import { EducationType } from '../../../studio/types';
 import { EducationItem } from '../EducationItem';
 import { SectionHeading } from '../SectionHeading';
 
-type EducationSectionProps = { data: [EducationType & { _key: string }] };
+type EducationSectionProps = { data: EducationType[] };
 
 /**
  * Main education section.
@@ -12,7 +12,7 @@ const EducationSection = (props: EducationSectionProps) => {
   return (
     <Stack>
       <SectionHeading>Education</SectionHeading>
-      <Stack spacing={4}>
+      <Stack id="education-section" spacing={4}>
         {props.data.map((item) => (
           <EducationItem key={item._key} {...item} />
         ))}
