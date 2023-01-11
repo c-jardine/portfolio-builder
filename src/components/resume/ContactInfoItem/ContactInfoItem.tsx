@@ -1,6 +1,8 @@
 import { Stack, StackDivider, Text } from '@chakra-ui/react';
 import React from 'react';
+import { IconType } from 'react-icons';
 import { FaEnvelope, FaGithub, FaLinkedinIn, FaPhone } from 'react-icons/fa';
+import { Link } from '../../core';
 
 type ContactInfoProps = {
   type: string;
@@ -13,7 +15,7 @@ type ContactInfoIconProps = Pick<ContactInfoProps, 'type'>;
  * Generate an icon matching the contact type.
  */
 const ContactInfoIcon = (props: ContactInfoIconProps) => {
-  const icon = () => {
+  const icon = (): IconType => {
     switch (props.type) {
       case 'email':
         return FaEnvelope;
@@ -35,20 +37,34 @@ const ContactInfoIcon = (props: ContactInfoIconProps) => {
  * Main contact info item.
  */
 const ContactInfoItem = (props: ContactInfoProps) => {
+  const getLink = (): string => {
+    switch (props.type) {
+      case 'email':
+        return `mailto:${props.value}`;
+      case 'phone':
+        return `tel:${props.value}`;
+      case 'github':
+        return `https://www.github.com/${props.value}`;
+      case 'linkedin':
+        return `https://www.linkedin.com/in/${props.value}`;
+    }
+  };
   return (
-    <Stack
-      divider={<StackDivider />}
-      alignItems="center"
-      w="max"
-      p={2}
-      borderWidth={1}
-      borderRadius="lg"
-    >
-      <ContactInfoIcon type={props.type} />
-      <Text px={2} fontSize="sm">
-        {props.value}
-      </Text>
-    </Stack>
+    <Link href={getLink()}>
+      <Stack
+        divider={<StackDivider />}
+        alignItems="center"
+        w="full"
+        p={2}
+        borderWidth={1}
+        borderRadius="lg"
+      >
+        <ContactInfoIcon type={props.type} />
+        <Text px={2} fontSize="sm">
+          {props.value}
+        </Text>
+      </Stack>
+    </Link>
   );
 };
 export default ContactInfoItem;

@@ -17,12 +17,14 @@ const ContactInfo = defineType({
       type: 'string',
     },
     {
-      title: 'LinkedIn',
+      title: 'LinkedIn Username',
+      description: 'https://www.linkedin.com/in/{username}',
       name: 'linkedin',
       type: 'string',
     },
     {
-      title: 'GitHub',
+      title: 'GitHub Username',
+      description: 'https://www.github.com/{username}',
       name: 'github',
       type: 'string',
     },
