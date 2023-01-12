@@ -1,17 +1,31 @@
 import { DateRangeType, MonthYearType } from '../studio/types';
 
 /**
+ * Helper function that formats a month and year.
+ */
+const formatMonthAndYear = (month: string, year: string) => {
+  return `${month} ${year}`;
+};
+
+/**
  * Formats the MonthYear schema type.
  * @param date The date object returned by Sanity.
  * @returns The month and year if both are provided; or the year if no month is
  * provided; or null if neither are provided.
  */
 export const formatDate = (date: MonthYearType) => {
-  const monthAndYear = (date.month && date.year) ?? null;
-  if (monthAndYear) return `${date.month} ${date.year}`;
-  const year = date.year ?? null;
-  if (year) return year;
+  if (date.month && date.year) return formatMonthAndYear(date.month, date.year);
+  if (date.year) return date.year;
   return null;
+};
+
+/**
+ * Helper function that formats from and to dates.
+ */
+const formatDatesFromTo = (from: MonthYearType, to: MonthYearType) => {
+  const formatFrom = formatDate(from);
+  const formatTo = formatDate(to);
+  return `${formatFrom} - ${formatTo}`;
 };
 
 /**
@@ -20,12 +34,17 @@ export const formatDate = (date: MonthYearType) => {
  * @returns A formatted string representation of the date range.
  */
 export const formatDateRange = (date: DateRangeType) => {
-  const fromDate = date.from && formatDate(date.from);
-  const toDate = date.present ? 'present' : date.to && formatDate(date.to);
-  const from = fromDate ? `${fromDate}` : null;
-  const to = toDate ? toDate : null;
+  // April 2008 - June 2010
+  if (!date.present && date.from && date.to)
+    return formatDatesFromTo(date.from, date.to);
 
-  if (!from && !to) return null;
+  // June 2010
+  if (!date.present && !date.from && date.to) return formatDate(date.to);
 
-  return `${from ? `${from} - ` : ''}${to}`;
+  // present
+  if (date.present && !date.from && !date.to) return 'present';
+
+  // April 2008 - present
+  if (date.present && date.from) return `${formatDate(date.from)} - present`;
+  return null;
 };
