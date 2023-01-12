@@ -6,7 +6,7 @@ import { DateRangeType, MonthYearType } from '../studio/types';
  * @returns The month and year if both are provided; or the year if no month is
  * provided; or null if neither are provided.
  */
-const formatDate = (date: MonthYearType) => {
+export const formatDate = (date: MonthYearType) => {
   const monthAndYear = (date.month && date.year) ?? null;
   if (monthAndYear) return `${date.month} ${date.year}`;
   const year = date.year ?? null;
@@ -20,9 +20,12 @@ const formatDate = (date: MonthYearType) => {
  * @returns A formatted string representation of the date range.
  */
 export const formatDateRange = (date: DateRangeType) => {
-  const fromDate = formatDate(date.from);
-  const toDate = date.present ? 'present' : formatDate(date.to);
-  const from = fromDate ? `${fromDate} -` : '';
-  const to = toDate ? toDate : '';
-  return `${from} ${to}`;
+  const fromDate = date.from && formatDate(date.from);
+  const toDate = date.present ? 'present' : date.to && formatDate(date.to);
+  const from = fromDate ? `${fromDate}` : null;
+  const to = toDate ? toDate : null;
+
+  if (!from && !to) return null;
+
+  return `${from ? `${from} - ` : ''}${to}`;
 };

@@ -1,3 +1,3 @@
-export * from './dateRange';
+export * from './formatDateRange';
+export * from './formatLocation';
 export * from './inlineListSeparator';
-export * from './location';

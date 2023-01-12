@@ -10,7 +10,7 @@ export const inlineListSeparator = (
   separator: Separator | string
 ) => {
   let inlinedList = '';
-  list.map((item, index) => {
+  list?.map((item, index) => {
     if (index < list.length - 1) {
       inlinedList += item + separator;
     } else {
