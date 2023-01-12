@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import { SkillsSectionType } from '../../../studio/types';
+import { inlineListSeparator, Separator } from '../../../utils';
 import SkillsItem from './SkillsItem';
 
 const defaultProps: SkillsSectionType = {
@@ -16,6 +17,10 @@ describe('SkillsItem', () => {
     expect(screen.getByRole('heading')).toHaveTextContent(defaultProps.label);
 
     // Shows skills list
-    expect(screen.getByRole('list').children.length).toBe(3);
+    const inlinedSkills = inlineListSeparator(
+      defaultProps.skills,
+      Separator.COMMA
+    );
+    expect(screen.getByText(inlinedSkills)).toBeTruthy();
   });
 });

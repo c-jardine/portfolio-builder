@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { EducationType } from '../../../studio/types';
 import EducationSection from './EducationSection';
 
